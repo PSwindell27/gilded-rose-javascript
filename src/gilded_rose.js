@@ -1,7 +1,33 @@
-function Item(name, sell_in, quality) {
-  this.name = name;
-  this.sell_in = sell_in;
-  this.quality = quality;
+class Item{
+  constructor(name, sell_in, quality){
+      this.name = name;
+      this.sell_in = sell_in;
+      this.quality = quality;
+  }
+}
+
+class CheezeItem extends Items{
+  updateQuality(){
+    this.sell_in--;
+    if(this.quality < 50){
+      this.quality++;
+    }
+  }
+}
+
+class BackstagePassItem extends Items{
+  updateQuality(){
+    this.sell_in--;
+    if(this.sell_in <= 10 && this.sell_in > 5){
+      this.quality += 2;
+    }else if(this.sell_in <= 5 && this.sell_in > 0 ){
+      this.quality += 3;
+    }else if(this.sell_in === 0){
+      this.quality = 0;
+    }else{
+      this.quality++;
+    }
+  }
 }
 
 var items = []
