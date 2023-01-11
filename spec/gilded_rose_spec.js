@@ -1,3 +1,4 @@
+
 describe("update_quality", () => {
   it("degrades an item twice as fast, when sell_in days is less than zero", () => {
     const testItem = new BasicItem("+5 Dexterity Vest", -1, 4);

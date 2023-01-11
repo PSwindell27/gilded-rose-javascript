@@ -6,7 +6,8 @@ class Item{
   }
 }
 
-class CheezeItem extends Items{
+
+class CheezeItem extends Item{
   updateQuality(){
     this.sell_in--;
     if(this.quality < 50){
@@ -15,7 +16,8 @@ class CheezeItem extends Items{
   }
 }
 
-class BackstagePassItem extends Items{
+class BackstagePassItem extends Item{
+  
   updateQuality(){
     this.sell_in--;
     if(this.sell_in <= 10 && this.sell_in > 5){
@@ -30,13 +32,27 @@ class BackstagePassItem extends Items{
   }
 }
 
+class ConjuredItem extends Item{
+  
+}
+
+class LegendaryItem extends Item{
+  
+}
+
+class BasicItem{
+  updateQuality(){
+    
+  }
+}
+
 var items = []
 
 items.push(new Item('+5 Dexterity Vest', 10, 20));
-items.push(new Item('Aged Brie', 2, 0));
+items.push(new CheezeItem('Aged Brie', 2, 0));
 items.push(new Item('Elixir of the Mongoose', 5, 7));
 items.push(new Item('Sulfuras, Hand of Ragnaros', 0, 80));
-items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
+items.push(new BackstagePassItem('Backstage passes to a TAFKAL80ETC concert', 15, 20));
 items.push(new Item('Conjured Mana Cake', 3, 6));
 
 function update_quality() {
